@@ -131,7 +131,7 @@ EOF;
     // - Valid for all path on the domain, for this FQDN only
     // - Ensure Cookies are not available to Javascript
     // - Cookies are sent on https only
-    $domain = ($_SERVER['HTTP_HOST'] !== 'localhost') ? $_SERVER['SERVER_NAME'] : false;
+    $domain = ($_SERVER['HTTP_HOST'] !== 'localhost') ? (isset($_SERVER["HTTP_HOST"]) ? preg_split("/:/", $_SERVER["HTTP_HOST"])[0] : $_SERVER['SERVER_NAME']) : false;
     session_set_cookie_params (0, "/", $domain, true, true);
 
     // Create a session
