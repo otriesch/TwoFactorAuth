@@ -90,7 +90,7 @@ else {
 				$url = parse_url($_GET['from']);
 				$from = $url['path'] . (!empty($url['query']) ? '?' . $url['query'] : '') . (!empty($url['fragment']) ? '#' . $url['fragment'] : '');
 			}
-	            $redirectTo = ((isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] === "on")? "https://" : "http://").(isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"]).$from;
+			$redirectTo = ((isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] === "on")? "https" : (isset($_SERVER["HTTP_X_FORWARDED_PROTO"])? $_SERVER["HTTP_X_FORWARDED_PROTO"] : "http"))."://".(isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"]).$from;
 	        }
 	        else {
 	            $redirectTo = AUTH_SUCCEED_REDIRECT_URL;
