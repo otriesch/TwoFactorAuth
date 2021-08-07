@@ -52,6 +52,10 @@ define('QRCODE_TITLE','www.example.com');
 // you're already using
 define('SESSION_NAME','2fatkn');
 
+// Set the lifetime of the cookie, meaning the time until a new login is necessary in seconds
+// (0 is indefinite, 43200 seconds is half a day)
+define('SESSION_TIME', 43200);
+
 // Redirection mechanism upon successful login :
 // If the user has been redirected to the login page from another page AND this other page
 // is passed as a GET parameter to the login page, then the user will be redirected back to
