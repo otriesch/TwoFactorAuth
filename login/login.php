@@ -73,7 +73,7 @@ else {
 	        // - Ensure Cookies are not available to Javascript
 	        // - Cookies are sent on https only
 	        $domain = ($_SERVER['HTTP_HOST'] !== 'localhost') ? (isset($_SERVER["HTTP_HOST"]) ? preg_split("/:/", $_SERVER["HTTP_HOST"])[0] : $_SERVER['SERVER_NAME']) : false;
-	        session_set_cookie_params (0, "/", $domain, true, true);
+	        session_set_cookie_params (SESSION_TIME, "/", $domain, true, true);
 	    
 	        // Create a session
 	        session_start();
