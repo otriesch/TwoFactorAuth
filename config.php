@@ -56,6 +56,12 @@ define('SESSION_NAME','2fatkn');
 // (0 is indefinite, 43200 seconds is half a day)
 define('SESSION_TIME', 43200);
 
+// Set the number ob subdomain levels shall be included in the domain of the cookie. 
+// E.g. the URL https://gamma.beta.alpa.org has 2 subdomain levels gamma (level 2) and beta (level 1). 
+// If you want to limit the domain in the cookie to beta.alpa.org, then set SUBDOMAIN_LEVEL to 1.
+// (99 as default is always including all subdomains)
+define('SUBDOMAIN_LEVEL', 1);
+
 // Redirection mechanism upon successful login :
 // If the user has been redirected to the login page from another page AND this other page
 // is passed as a GET parameter to the login page, then the user will be redirected back to
